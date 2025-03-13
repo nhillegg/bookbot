@@ -13,3 +13,17 @@ def get_num_character(book):
         else:
             char_count[char] = 1
     return char_count
+
+
+
+def sort_on(dict):
+    return dict["count"]
+
+def sort(dict):
+    results_list = []
+    for char, count in dict.items():
+        char_dict = {"char": char, "count": count}
+        results_list.append(char_dict)
+    
+    results_list.sort(reverse=True, key=sort_on)
+    return results_list 
